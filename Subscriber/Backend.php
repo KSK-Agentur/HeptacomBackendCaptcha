@@ -59,6 +59,19 @@ class Backend implements SubscriberInterface
 
     protected function evaluateCaptcha($secret, $gRecaptchaResponse, $remoteip)
     {
+        $guzzleFactory = Shopware()->Container()->get('guzzle_http_client_factory');
+        $guzzleClient = $guzzleFactory->createClient();
+
+        $response = $guzzleClient->post('https://www.google.com/recaptcha/api/siteverify', [
+            'body' => [
+                'secret' => $secret,
+                'response' => $gRecaptchaResponse,
+                'remoteip' => $remoteip
+            ]
+        ]);
+        $responseJson = $response->json();
+
+        return (bool) $responseJson['success'];
     }
 
     protected function log($msg)
