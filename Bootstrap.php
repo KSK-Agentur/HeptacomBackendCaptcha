@@ -90,6 +90,23 @@ class Shopware_Plugins_Backend_HeptacomBackendCaptcha_Bootstrap extends Shopware
         return true;
     }
 
+    public function createConfiguration()
+    {
+        $form = $this->Form();
+
+        $form->setElement('text', 'sitekey', [
+            'label' => 'Websiteschlüssel',
+            'description' => 'Verwenden Sie diesen Schlüssel im HTML-Code für die Nutzer Ihrer Website.',
+            'required' => true,
+            'position' => 1
+        ])->setElement('text', 'secret', [
+            'label' => 'Geheimer Schlüssel',
+            'description' => 'Verwenden Sie diesen Schlüssel für die Kommunikation zwischen Ihrer Website und Google. Halten Sie diesen Schlüssel geheim.',
+            'required' => true,
+            'position' => 2
+        ]);
+    }
+
     public function onStartDispatch(Enlight_Event_EventArgs $args)
     {
         $this->registerMyComponents();
