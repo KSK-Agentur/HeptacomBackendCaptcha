@@ -9,9 +9,25 @@ class Backend implements SubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
+            'Enlight_Plugins_ViewRenderer_PreRender' => 'onViewRendererPreRender',
             'Enlight_Controller_Action_PostDispatchSecure_Backend' => 'onBackendPostDispatch',
             'Enlight_Controller_Action_Backend_Login_Login' => 'onBackendLoginLoginAction',
         );
+    }
+
+    public function onViewRendererPreRender(\Enlight_Event_EventArgs $args)
+    {
+        $subject = $args->getSubject();
+        $view = $subject->Action()->View();
+        $request = $args->get('request');
+
+        $module = $request->getModuleName();
+        $controller = strtolower(trim($request->getControllerName()));
+
+        if ($module == 'backend'
+            && $controller == 'index') {
+            $view->Engine()->clearAllCache();
+        }
     }
 
     public function onBackendPostDispatch(\Enlight_Event_EventArgs $args)
