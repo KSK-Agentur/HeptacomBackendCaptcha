@@ -1,0 +1,20 @@
+{
+    "label": "Backend reCAPTCHA",
+    "copyright": "(c) by HEPTACOM GbR",
+    "license": "proprietary",
+    "link": "http://www.heptacom.de/",
+    "author": "HEPTACOM GbR",
+
+    "currentVersion": "1.0.0",
+
+    "changelog": {
+        "1.0.0": "Erstveröffentlichung"
+    },
+
+    "compatibility": {
+        "minimumVersion": "5.2.0",
+        "maximumVersion": null,
+        "blacklist": [
+        ]
+    }
+}
