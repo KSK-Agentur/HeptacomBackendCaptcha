@@ -7,8 +7,8 @@ Captchas sind seit Jahren eine bewährte Methode, sich dagegen zu schützen. Mit
 Weitere Informationen finden Sie [direkt bei Google](https://www.google.com/recaptcha).
 
 ## Installationsanleitung
-Plugin installieren.
-Bei [Google reCAPTCHA](https://www.google.com/recaptcha/admin) anmelden.
-Eine neue Website registrieren.
-Zu einem Website-Eintrag wird Ihnen ein Schlüssel-Paar angezeigt.
-Websiteschlüssel und Geheimen Schlüssel in die Plugin-Konfiguration kopieren und speichern.
+* Plugin installieren.
+* Bei [Google reCAPTCHA](https://www.google.com/recaptcha/admin) anmelden.
+* Eine neue Website registrieren.
+* Zu einem Website-Eintrag wird Ihnen ein Schlüssel-Paar angezeigt.
+* Websiteschlüssel und Geheimen Schlüssel in die Plugin-Konfiguration kopieren und speichern.
