@@ -5,6 +5,8 @@
     "link": "http://www.heptacom.de/",
     "author": "HEPTACOM GbR",
 
+    "description": "<h1>Einrichtung bei Google reCAPTCHA</h1><p><a href='https://www.google.com/recaptcha/admin' target='_blank'>Jetzt einrichten</a></p>",
+
     "currentVersion": "1.0.0",
 
     "changelog": {
