@@ -93,6 +93,14 @@ class Shopware_Plugins_Backend_HeptacomBackendCaptcha_Bootstrap extends Shopware
     public function onStartDispatch(Enlight_Event_EventArgs $args)
     {
         $this->registerMyComponents();
+
+        $subscribers = array(
+            new \Shopware\HeptacomBackendCaptcha\Subscriber\Backend()
+        );
+
+        foreach ($subscribers as $subscriber) {
+            $this->Application()->Events()->addSubscriber($subscriber);
+        }
     }
 
     public function registerMyComponents()
