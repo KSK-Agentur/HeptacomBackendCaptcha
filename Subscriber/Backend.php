@@ -10,6 +10,7 @@ class Backend implements SubscriberInterface
     {
         return array(
             'Enlight_Controller_Action_PostDispatchSecure_Backend' => 'onBackendPostDispatch',
+            'Enlight_Controller_Action_Backend_Login_Login' => 'onBackendLoginLoginAction',
         );
     }
 
@@ -33,6 +34,31 @@ class Backend implements SubscriberInterface
         $view->addTemplateDir(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', 'Views']));
         $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, ['backend', 'heptacom_backend_captcha', 'header.tpl']));
         $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, ['backend', 'heptacom_backend_captcha', 'view', 'main', 'form.js']));
+    }
+
+    public function onBackendLoginLoginAction(\Enlight_Event_EventArgs $args)
+    {
+        /** @var $controller \Enlight_Controller_Action */
+        $controller = $args->getSubject();
+        $request = $controller->Request();
+
+        $sitekey = Shopware()->Plugins()->Backend()->HeptacomBackendCaptcha()->Config()->get('sitekey');
+        $secret = Shopware()->Plugins()->Backend()->HeptacomBackendCaptcha()->Config()->get('secret');
+
+        if (empty($sitekey) || empty($secret)) {
+            return;
+        }
+
+        $gRecaptchaResponse = $request->get('g-recaptcha-response');
+        $remoteip = $request->getClientIp();
+
+        if (!$this->evaluateCaptcha($secret, $gRecaptchaResponse, $remoteip)) {
+            return false;
+        }
+    }
+
+    protected function evaluateCaptcha($secret, $gRecaptchaResponse, $remoteip)
+    {
     }
 
     protected function log($msg)
