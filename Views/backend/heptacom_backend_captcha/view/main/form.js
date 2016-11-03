@@ -27,4 +27,9 @@ Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.main.Form', {
         }
     }
 });
+
+Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.Main', {
+    override: 'Shopware.apps.Login.view.Main',
+    height: 480
+});
 //{/block}

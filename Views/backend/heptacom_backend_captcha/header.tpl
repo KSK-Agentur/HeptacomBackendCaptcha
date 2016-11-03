@@ -1,12 +1,5 @@
 {block name="backend/base/header/css" append}
-    <style type="text/css">
-        .login-window h1 {
-            margin-bottom: 10px;
-        }
-        .login-window.x-window .x-toolbar {
-            margin-top: -10px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{link file='backend/heptacom_backend_captcha/resources/css/login_window.css'}?{Shopware::REVISION}" />
 {/block}
 
 {block name="backend/base/header/javascript" append}
