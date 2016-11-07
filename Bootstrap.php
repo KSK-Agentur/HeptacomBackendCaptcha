@@ -127,44 +127,4 @@ class Shopware_Plugins_Backend_HeptacomBackendCaptcha_Bootstrap extends Shopware
             $this->Path()
         );
     }
-
-    /**
-     * checkLicense()-method for HeptacomBackendCaptcha
-     */
-    public function checkLicense($throwException = true)
-    {
-        try {
-            /** @var $l Shopware_Components_License */
-            $l = Shopware()->License();
-        } catch (\Exception $e) {
-            if ($throwException) {
-                throw new Exception('The license manager has to be installed and active');
-            } else {
-                return false;
-            }
-        }
-
-        try {
-            static $r, $module = 'HeptacomBackendCaptcha';
-            if(!isset($r)) {
-                $s = base64_decode('XZSOAM81yQG8VnSrP1KaundIiKo=');
-                $c = base64_decode('/g6czIB8w2oWmgBNCwnbaEqkE3Y=');
-                $r = sha1(uniqid('', true), true);
-                $i = $l->getLicense($module, $r);
-                $t = $l->getCoreLicense();
-                $u = strlen($t) === 20 ? sha1($t . $s . $t, true) : 0;
-                $r = $i === sha1($c. $u . $r, true);
-            }
-            if (!$r && $throwException) {
-                throw new Exception('License check for module "' . $module . '" has failed.');
-            }
-            return $r;
-        } catch (Exception $e) {
-            if ($throwException) {
-                throw new Exception('License check for module "' . $module . '" has failed.');
-            } else {
-                return false;
-            }
-        }
-    }
 }

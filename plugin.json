@@ -7,11 +7,12 @@
 
     "description": "<h1>Einrichtung bei Google reCAPTCHA</h1><p><a href='https://www.google.com/recaptcha/admin' target='_blank'>Jetzt einrichten</a></p>",
 
-    "currentVersion": "1.0.1",
+    "currentVersion": "1.0.2",
 
     "changelog": {
         "1.0.0": "Erstveröffentlichung",
-        "1.0.1": "Optische Verbesserungen"
+        "1.0.1": "Optische Verbesserungen",
+        "1.0.2": "Lizenzprüfung entfernt"
     },
 
     "compatibility": {
