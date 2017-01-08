@@ -5,6 +5,7 @@ namespace HeptacomCaptcha;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Enlight_Event_EventArgs;
 use Enlight_Controller_Action;
+use Enlight_Controller_Request_Request;
 use Enlight_Controller_Plugins_ViewRenderer_Bootstrap;
 use Shopware\Components\Logger;
 use Shopware\Components\Plugin;
@@ -127,6 +128,7 @@ class HeptacomCaptcha extends Plugin
         /** @var Enlight_Controller_Plugins_ViewRenderer_Bootstrap $subject */
         $subject = $args->get('subject');
         $view = $subject->Action()->View();
+        /** @var Enlight_Controller_Request_Request $request */
         $request = $args->get('request');
         $module = $request->getModuleName();
         $controller = strtolower(trim($request->getControllerName()));
