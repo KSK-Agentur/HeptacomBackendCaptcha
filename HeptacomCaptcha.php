@@ -93,6 +93,7 @@ class HeptacomCaptcha extends Plugin
 
             if ($captchaService->hasKeys()) {
                 $view->assign('heptacomBackendCaptcha', [
+                    'visibility' => (bool) Shopware()->Config()->getByNamespace('HeptacomCaptcha', 'visibility'),
                     'sitekey' => $captchaService->getSitekey(),
                 ]);
 
@@ -109,7 +110,7 @@ class HeptacomCaptcha extends Plugin
                     'heptacom_backend_captcha',
                     'view',
                     'main',
-                    'visible.js'
+                    'form.js'
                 ]));
             }
         }

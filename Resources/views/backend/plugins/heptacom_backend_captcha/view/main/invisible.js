@@ -1,4 +1,8 @@
-// visible captcha
+// invisible captcha
+function YourOnSubmitFn(token) {
+    console.log('test');
+}
+
 Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.main.Form', {
     override:'Shopware.apps.Login.view.main.Form',
 
@@ -20,7 +24,7 @@ Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.main.Form', {
 
         if(Ext.ieVersion === 0 || Ext.ieVersion >= 9) {
             me.captcha = Ext.create('Ext.container.Container', {
-                html: '<div id="heptacom_backend_captcha" style="-webkit-transform: scale(0.88);transform: scale(0.88);-webkit-transform-origin: 0 0;transform-origin: 0 0;"></div>'
+                html: '<button class="g-recaptcha" data-sitekey="{$heptacomBackendCaptcha.sitekey}" data-callback="YourOnSubmitFn">Submit</button>'
             });
 
             me.add(me.captcha);
