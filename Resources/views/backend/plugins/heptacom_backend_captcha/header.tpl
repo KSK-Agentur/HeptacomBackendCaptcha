@@ -1,5 +1,5 @@
 {block name="backend/base/header/css" append}
-    <link rel="stylesheet" type="text/css" href="{link file='backend/heptacom_backend_captcha/resources/css/login_window.css'}?{Shopware::REVISION}" />
+    <link rel="stylesheet" type="text/css" href="{link file='backend/plugins/heptacom_backend_captcha/resources/css/login_window.css'}?{Shopware::REVISION}" />
 {/block}
 
 {block name="backend/base/header/javascript" append}

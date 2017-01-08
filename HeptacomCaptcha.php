@@ -96,8 +96,20 @@ class HeptacomCaptcha extends Plugin
                 ]);
 
                 $view->addTemplateDir(implode(DIRECTORY_SEPARATOR, [$this->getPath(), 'Resources', 'views']));
-                $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, ['backend', 'heptacom_backend_captcha', 'header.tpl']));
-                $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, ['backend', 'heptacom_backend_captcha', 'view', 'main', 'form.js']));
+                $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, [
+                    'backend',
+                    'plugins',
+                    'heptacom_backend_captcha',
+                    'header.tpl'
+                ]));
+                $view->extendsTemplate(implode(DIRECTORY_SEPARATOR, [
+                    'backend',
+                    'plugins',
+                    'heptacom_backend_captcha',
+                    'view',
+                    'main',
+                    'visible.js'
+                ]));
             }
         }
         catch (ServiceNotFoundException $exception) {
