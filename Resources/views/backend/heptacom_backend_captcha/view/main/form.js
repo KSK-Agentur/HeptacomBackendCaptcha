@@ -4,7 +4,7 @@ Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.main.Form', {
 
     listeners: {
         render: function() {
-            grecaptcha.render('heptacom_backend_captcha', {
+            window.grecaptcha.render('heptacom_backend_captcha', {
                 'sitekey': '{$heptacomBackendCaptcha.sitekey}'
             });
         },
