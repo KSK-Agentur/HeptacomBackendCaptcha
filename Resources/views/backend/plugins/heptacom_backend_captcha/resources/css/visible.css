@@ -17,3 +17,10 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
+.x-box-layout-ct,
+.x-border-layout-ct {
+    overflow: visible;
+}
+.grecaptcha-badge {
+    background-color: #ffffff;
+}
