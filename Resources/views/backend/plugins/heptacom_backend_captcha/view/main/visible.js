@@ -1,10 +1,10 @@
-//{block name="backend/login/view/main/form" append}
+// visible captcha
 Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.main.Form', {
     override:'Shopware.apps.Login.view.main.Form',
 
     listeners: {
         render: function() {
-            grecaptcha.render('heptacom_backend_captcha', {
+            window.grecaptcha.render('heptacom_backend_captcha', {
                 'sitekey': '{$heptacomBackendCaptcha.sitekey}'
             });
         },
@@ -32,4 +32,3 @@ Ext.define('Shopware.apps.HeptacomBackendCaptcha.view.Main', {
     override: 'Shopware.apps.Login.view.Main',
     height: 480
 });
-//{/block}
