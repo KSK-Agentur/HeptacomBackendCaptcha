@@ -1,6 +1,6 @@
 <?php
 
-namespace HeptacomCaptcha\Service;
+namespace HeptacomBackendCaptcha\Service;
 
 use Shopware\Components\HttpClient\GuzzleFactory;
 

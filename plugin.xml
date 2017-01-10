@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
-    <label>HEPTACOM reCAPTCHA</label>
-    <version>2.0.0-dev</version>
+    <label>Backend reCAPTCHA</label>
+    <version>2.0.0</version>
     <link>https://www.heptacom.de</link>
     <author>HEPTACOM GbR</author>
     <description><![CDATA[
@@ -12,21 +12,35 @@
             Website vor missbräuchlichen Aktivitäten. Gleichzeitig durchlaufen normale Benutzer diesen Prozess mit
             Leichtigkeit.
         </p>
+        <br />
         <p>
             reCAPTCHA bietet mehr als nur Spam-Schutz. Jedes Mal, wenn ein CAPTCHAs gelöst wird, hilft der menschliche
             Aufwand beim Digitalisieren von Text, Annotieren von Bildern und beim Erstellen von maschinellen
             Lerndatensätzen. Dies wiederum hilft, Bücher zu bewahren, Karten zu verbessern und komplizierte KI-Probleme
             zu lösen.
         </p>
-        <div class="x-container plugin-manager-action-button primary x-container-default" style="width: 200px;">
-            <a href="https://www.google.com/recaptcha/admin" target="_blank" style="
+        <br />
+        <a href="https://www.google.com/recaptcha/admin"
+            target="_blank"
+            class="x-container plugin-manager-action-button primary x-container-default"
+            style="
+                width: 200px;
                 color: #ffffff;
                 text-decoration: none;
+                display: inline-block;
             ">Jetzt einrichten</a>
-        </div>
     ]]></description>
     <compatibility minVersion="5.2.0" />
     <changelog version="1.0.0">
-        <changes lang="de">Veröffentlichung</changes>
+        <changes lang="de">Erstveröffentlichung</changes>
+    </changelog>
+    <changelog version="1.0.1">
+        <changes lang="de">Optische Verbesserungen</changes>
+    </changelog>
+    <changelog version="1.0.2">
+        <changes lang="de">Lizenzprüfung entfernt</changes>
+    </changelog>
+    <changelog version="2.0.0">
+        <changes lang="de">Erstveröffentlichung</changes>
     </changelog>
 </plugin>

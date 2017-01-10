@@ -1,6 +1,6 @@
 <?php
 
-namespace HeptacomCaptcha;
+namespace HeptacomBackendCaptcha;
 
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Enlight_Event_EventArgs;
@@ -13,9 +13,9 @@ use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UpdateContext;
 use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\DeactivateContext;
-use HeptacomCaptcha\Service\CaptchaService;
+use HeptacomBackendCaptcha\Service\CaptchaService;
 
-class HeptacomCaptcha extends Plugin
+class HeptacomBackendCaptcha extends Plugin
 {
     /**
      * @param UpdateContext $context
