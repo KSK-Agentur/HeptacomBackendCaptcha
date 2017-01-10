@@ -24,8 +24,8 @@ class CaptchaService
     public function __construct(GuzzleFactory $guzzleFactory)
     {
         $this->guzzleFactory = $guzzleFactory;
-        $this->sitekey = Shopware()->Config()->getByNamespace('HeptacomCaptcha', 'sitekey');
-        $this->secret = Shopware()->Config()->getByNamespace('HeptacomCaptcha', 'secret');
+        $this->sitekey = Shopware()->Config()->getByNamespace('HeptacomBackendCaptcha', 'sitekey');
+        $this->secret = Shopware()->Config()->getByNamespace('HeptacomBackendCaptcha', 'secret');
     }
 
     /**

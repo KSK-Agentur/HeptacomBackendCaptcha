@@ -63,8 +63,17 @@ class HeptacomBackendCaptcha extends Plugin
         $controller = $args->get('subject');
         $request = $controller->Request();
 
-        /** @var CaptchaService $captchaService */
-        $captchaService = $this->container->get('heptacom_backend_captcha.service.captcha_service');
+        try {
+            /** @var CaptchaService $captchaService */
+            $captchaService = $this->container->get('heptacom_backend_captcha.service.captcha_service');
+        }
+        catch (ServiceNotFoundException $exception) {
+            /**@var Logger $pluginLogger */
+            $pluginLogger = $this->container->get('PluginLogger');
+            $pluginLogger->error($exception->getMessage());
+
+            return null;
+        }
 
         if ($captchaService->hasKeys()) {
             $gRecaptchaResponse = $request->get('g-recaptcha-response');
@@ -93,7 +102,7 @@ class HeptacomBackendCaptcha extends Plugin
 
             if ($captchaService->hasKeys()) {
                 $view->assign('heptacomBackendCaptcha', [
-                    'visibility' => (bool) Shopware()->Config()->getByNamespace('HeptacomCaptcha', 'visibility'),
+                    'visibility' => (bool) Shopware()->Config()->getByNamespace('HeptacomBackendCaptcha', 'visibility'),
                     'sitekey' => $captchaService->getSitekey(),
                 ]);
 
