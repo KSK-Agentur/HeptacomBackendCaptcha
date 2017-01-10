@@ -64,7 +64,7 @@ class HeptacomBackendCaptcha extends Plugin
         $request = $controller->Request();
 
         /** @var CaptchaService $captchaService */
-        $captchaService = $this->container->get('heptacom_captcha.service.captcha_service');
+        $captchaService = $this->container->get('heptacom_backend_captcha.service.captcha_service');
 
         if ($captchaService->hasKeys()) {
             $gRecaptchaResponse = $request->get('g-recaptcha-response');
@@ -89,7 +89,7 @@ class HeptacomBackendCaptcha extends Plugin
 
         try {
             /** @var CaptchaService $captchaService */
-            $captchaService = $this->container->get('heptacom_captcha.service.captcha_service');
+            $captchaService = $this->container->get('heptacom_backend_captcha.service.captcha_service');
 
             if ($captchaService->hasKeys()) {
                 $view->assign('heptacomBackendCaptcha', [
