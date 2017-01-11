@@ -17,7 +17,7 @@ var reCaptchaOnSubmit = function(token) {
     }
     form.submit({
         url: '{url action=login}',
-        waitMsg: '{s name=wait/message}Login...{/s}',
+        waitMsg: '{s name=wait/message namespace=backend/login/controller/main}Login...{/s}',
         success: function(form, action) {
             window.location.href = window.location.href;
         },
@@ -25,13 +25,13 @@ var reCaptchaOnSubmit = function(token) {
             var lockedUntil, message;
             if(action.result.lockedUntil) {
                 action.result.lockedUntil = new Date(action.result.lockedUntil);
-                message = "{s name=failure/locked_message}Der Account ist bis zum [lockedUntil:date] um [lockedUntil:date('H:i:s')] Uhr gesperrt.{/s}";
+                message = "{s name=failure/locked_message namespace=backend/login/controller/main}Der Account ist bis zum [lockedUntil:date] um [lockedUntil:date('H:i:s')] Uhr gesperrt.{/s}";
                 message = new Ext.Template(message);
                 message = message.applyTemplate(action.result);
             } else {
-                message = '{s name=failure/input_message}Bitte überprüfen Sie Ihre Eingabe und probieren es erneut.{/s}';
+                message = '{s name=failure/input_message namespace=backend/login/controller/main}Bitte überprüfen Sie Ihre Eingabe und probieren es erneut.{/s}';
             }
-            Ext.Msg.alert('{s name=failure/title}Login fehlgeschlagen{/s}', '{s name=failure/message}Ihr Login war nicht erfolgreich. {/s}' + message);
+            Ext.Msg.alert('{s name=failure/title namespace=backend/login/controller/main}Login fehlgeschlagen{/s}', '{s name=failure/message namespace=backend/login/controller/main}Ihr Login war nicht erfolgreich. {/s}' + message);
             return false;
         }
     });
