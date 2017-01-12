@@ -6,6 +6,10 @@ Mit dem reCAPTCHA von Google schützen Sie Ihren Shop gegen Angriffe von Bots un
 Captchas sind seit Jahren eine bewährte Methode, sich dagegen zu schützen. Mit der neusten Version von reCAPTCHA hat Google jetzt eine Lösung entwickelt, mit der man bloß noch ein Häkchen setzen muss, um zu beweisen, dass man kein Bot ist.
 Weitere Informationen finden Sie [direkt bei Google](https://www.google.com/recaptcha).
 
+[hier gehts zum Shopware Plugin](http://store.shopware.com/hepta17566641621/backend-recaptcha.html)
+
+
+
 ## Installationsanleitung
 * Plugin installieren.
 * Bei [Google reCAPTCHA](https://www.google.com/recaptcha/admin) anmelden.
