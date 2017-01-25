@@ -8,7 +8,7 @@ Weitere Informationen finden Sie [direkt bei Google](https://www.google.com/reca
 
 [![Shopware-Icon (Blau)](https://de.shopware.com/media/image/sw-icon_blue16.png) Zum Community Store](https://store.shopware.com/hepta17566641621/backend-recaptcha.html)
 
-[![Shopware-Icon (Blau)](https://www.heptacom.de/fileadmin/templates/pages/heptacom/_resources/img/favicon/favicon-16x16.png) Zur HEPTACOM Website](https://www.heptacom.de)
+[![HEPTACOM-Icon](https://www.heptacom.de/fileadmin/templates/pages/heptacom/_resources/img/favicon/favicon-16x16.png) Zur HEPTACOM Website](https://www.heptacom.de)
 
 
 
