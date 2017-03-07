@@ -1,4 +1,5 @@
 {
   "name": "heptacom/heptacom-backend-captcha",
-  "description": "reCAPTCHA by Google makes the backend of Shopware more secure and prevents access for bots."
+  "description": "reCAPTCHA by Google makes the backend of Shopware more secure and prevents access for bots.",
+  "license": "GPL-3.0"
 }
